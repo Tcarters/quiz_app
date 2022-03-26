@@ -1,9 +1,12 @@
 // import logo from './logo.svg'
 import { useEffect, useMemo, useState } from 'react';
 import './App.css'
+import Timer from './components/Timer';
 import Trivia from './components/Trivia';
+import Start from './components/Start';
 
 const App = () => {
+    const [username, setUsername, message] = useState(null);
     const [questionNumber, setQuestionNumber] = useState(1);
     const [stop, setStop] = useState(false);
     const [earned, setEarned] = useState("$ 0");
@@ -109,26 +112,28 @@ useEffect( () => {
     return (
         
         <div className='App'>
-            <div className="main">
+            { username ? (
+                <>
+                <div className="main">
                 {
                    stop ? (<h1 className='endText'> You earned: {earned} </h1>
                    ) : (
                        <>
                        <div className='top'>
-                            <div className='timer'> 30
+                            <div className='timer'> 
+                             <Timer setStop={setStop} questionNumber={questionNumber} /> </div>
                         </div>
-             </div>
    
-                <div className='bottom'>
+            <div className='bottom'>
                     Question and Answers
                     <Trivia  data={data} 
                              setStop={setStop}
                              questionNumber={questionNumber}
                              setQuestionNumber={setQuestionNumber}  />
-                </div>
-                       </>  )}
-            
             </div>
+                  </>  )}
+            
+                </div>
             <div className='pyramid'>
                  <ul className='moneyList'>
                      { moneyPyramid.map((money) => (
@@ -141,6 +146,9 @@ useEffect( () => {
                      ))}
                 </ul>
             </div>    
+                
+                </>
+            ) : <Start setUsername={setUsername}  /> }
         </div>
     );
 }

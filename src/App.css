@@ -166,5 +166,56 @@
     left: 0;
     right: 0;
     margin: auto;
-    
+
+}
+
+.start {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.startInput {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.startInput:focus {
+    outline: none;
+}
+.startButton {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+.h1 {
+  /* text-align: center; */
+  /* align-items: center; */
+  /* height: 50px; */
+  /* top:  50%; */
+  margin: 110;
+  /* display: flex; */
+  /* justify-content: center; */
+  left: 50px;
+  right: 50px;
+  /* margin-right: 50%; */
+  /* margin-left: 100px; */
+  /* margin-right: 100px; */
+
+  /* position: absolute;    */
 }
